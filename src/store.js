@@ -33,11 +33,11 @@ export const PROVINCE_NAME_MAP = {
 export async function loadData() {
   try {
     const [cityStats, dailyData, monthlyStats, parallelData, meta] = await Promise.all([
-      fetch('/data/city_stats.json').then(r => r.json()),
-      fetch('/data/daily_data.json').then(r => r.json()),
-      fetch('/data/monthly_stats.json').then(r => r.json()),
-      fetch('/data/parallel_data.json').then(r => r.json()),
-      fetch('/data/meta.json').then(r => r.json()),
+      fetch('data/city_stats.json').then(r => r.json()),
+      fetch('data/daily_data.json').then(r => r.json()),
+      fetch('data/monthly_stats.json').then(r => r.json()),
+      fetch('data/parallel_data.json').then(r => r.json()),
+      fetch('data/meta.json').then(r => r.json()),
     ])
     state.cityStats = cityStats
     state.dailyData = dailyData
