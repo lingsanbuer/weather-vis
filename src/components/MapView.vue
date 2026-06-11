@@ -132,11 +132,10 @@ function handleResize() { chart?.resize() }
 // Load geoJSON once and cache it
 async function loadGeoJSON() {
   try {
-    const resp = await fetch('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json')
+    const resp = await fetch('data/china.json')
     chinaJson = await resp.json()
     tryRender()
   } catch {
-    // geoJSON failed -> use fallback when data is ready
     if (state.loaded) renderFallback()
   }
 }
